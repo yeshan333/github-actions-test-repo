@@ -16,7 +16,7 @@ jobs:
           chmod 777 -R ./sync_files
           ls -l
       - name: Tester
-        uses: yeshan333/rsync-deploy-action@main
+        uses: yeshan333/rsync-deploy-action@v1.0.0
         id: rsync-deploy-action
         with:
           ssh_login_username: ${{ secrets.SSH_LOGIN_USERNAME }}
