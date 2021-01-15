@@ -1,0 +1,25 @@
+name: rsync-deploy-action tester
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to test rsync-deploy-action
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Test
+        uses: yeshan333/rsync-deploy-action@v1.0.0-beta
+        id: rsync-deploy-action
+        with:
+          ssh_login_username: ${{ secrets.SSH_LOGIN_USERNAME }}
+          remote_server_ip: ${{ secrets.REMOTE_SERVER_IP }}
+          ssh_port: ${{ secrets.SSH_PORT }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source_path: ./sync_files/*
+          destination_path: ~/shan333.cn
+
+
