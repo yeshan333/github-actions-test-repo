@@ -5,14 +5,14 @@ on:
     branches: [main]
 
 jobs:
-  hello_world_job:
+  hello_world_rsync_deploy:
     runs-on: ubuntu-latest
     name: A job to test rsync-deploy-action
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Test
-        uses: yeshan333/rsync-deploy-action@v1.0.0-beta
+      - name: Tester
+        uses: yeshan333/rsync-deploy-action@main
         id: rsync-deploy-action
         with:
           ssh_login_username: ${{ secrets.SSH_LOGIN_USERNAME }}
