@@ -25,5 +25,9 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           source_path: ./sync_files/*
           destination_path: ~/shan333.cn
+      - name: Hello World Docker Action
+        uses: actions/hello-world-docker-action@main
+        with:
+          who-to-greet: 'yeshan333'
 
 
